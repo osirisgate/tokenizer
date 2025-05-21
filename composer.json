@@ -1,0 +1,43 @@
+{
+    "name": "osirisgate/tokenizer",
+    "type": "library",
+    "description": "Osirisgate token management.",
+    "keywords": ["token", "osirisgate", "security", "management"],
+    "license": "MIT",
+    "version": "1.0.0",
+    "require": {
+        "php": ">=8.2",
+        "osirisgate/core": "^1.0",
+        "firebase/php-jwt": "^6.11",
+        "ext-openssl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.1",
+        "friendsofphp/php-cs-fixer": "^3.75",
+        "phpstan/phpstan": "^2.1",
+        "symfony/var-dumper": "^7.2",
+        "symplify/easy-coding-standard": "^12.5",
+        "squizlabs/php_codesniffer": "^3.13",
+        "symfony/dotenv": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Osirisgate\\Component\\Tokenizer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Osirisgate\\Component\\Tokenizer\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ulrich Geraud AHOGLA",
+            "email": "developer@osirisgate.com"
+        }
+    ],
+    "scripts": {
+        "phpcs-fix": "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --allow-risky=yes --path-mode=intersection --config=.php-cs-fixer.dist.php src/",
+        "phpstan": "vendor/bin/phpstan analyse -c phpstan.dist.neon -l 9 src/"
+    }
+}
